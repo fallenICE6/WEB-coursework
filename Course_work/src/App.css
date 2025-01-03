@@ -1,0 +1,318 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Задаем минимальную высоту для тела страницы */
+}
+
+/* Стили для header */
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-text {
+  text-align: center;
+  margin-left: 5%;
+}
+
+.header-text h1 {
+  font-size: 2.2rem;
+  color: whitesmoke;
+}
+
+.header-text h3 {
+  font-size: 1.5rem;
+  color: #8913dd;
+}
+
+/* Стили для полоски поиска */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4a90e2; /* Цвет границы при фокусе */
+}
+
+.search-button {
+  background-color: #4a90e2;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+}
+
+.search-button:hover {
+  background-color: #357ab7; /* Цвет кнопки при наведении */
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+  .search-form {
+    width: 80%;
+  }
+}
+
+/* Стили для боковой навигации */
+.nav {
+  width: 220px;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out; /* Плавное анимированное раскрытие */
+}
+
+.nav.collapsed {
+  width: 60px; /* Сужаем навигацию, когда она скрыта */
+}
+
+.nav-content {
+  width: 100%; /* Чтобы содержимое занимало всю ширину навигации */
+  opacity: 1; /* Делаем видимым содержимое, когда оно показывается */
+  visibility: visible; /* Делаем видимым */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav.collapsed .nav-content {
+  opacity: 0; /* Скрываем содержимое при закрытой навигации */
+  visibility: hidden; /* Прячем содержимое, но не убираем из потока */
+}
+
+/* Стили для кнопки стрелки */
+.nav-toggle {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 20px;
+  right: -30px; /* Немного вправо от навигации */
+  cursor: pointer;
+  z-index: 10; /* Обеспечивает, что кнопка всегда будет поверх других элементов */
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Стили для боковой навигации, когда она скрыта */
+.nav.collapsed h3,
+.nav.collapsed ul,
+.nav.collapsed .company-name {
+  display: none; /* Все скрываем, кроме кнопки стрелки */
+}
+
+/* Стили для main content */
+main {
+  margin-left: 220px; /* Отступ от навигации */
+  padding: 20px;
+  flex: 1;
+}
+
+main .collapsed {
+  margin-left: 60px; /* Когда навигация скрыта, уменьшаем отступ */
+}
+
+/* Стили для ссылок */
+.nav ul li a {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav .company-name {
+  text-align: center;
+  color:#feb47b;
+  margin-top: 250%;
+}
+
+.nav ul li a:hover {
+  background-color: #888;
+}
+  .content-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Белый фон для блока с контентом */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+    color: #4a90e2; /* Цвет для заголовка */
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    background-image: url('components/background.jpg'); /* Укажите путь к вашему изображению */
+    background-size: cover; /* Чтобы изображение растягивалось на весь фон */
+    background-position: center center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    text-align: center;
+    color: #888; /* Легкий серый для подзаголовка */
+    margin-bottom: 30px;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .text-main h3 {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify; /* Выравнивание текста по ширине */
+    color: #555; /* Темно-серый цвет для текста */
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  
+  .text-main h3 br {
+    margin-bottom: 20px; /* Добавление отступов после разрывов строки */
+  }
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Стили для footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    position: static;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .nav ul li a {
+    padding: 10px 20px;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .company-name {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
