@@ -1,0 +1,111 @@
+.contactsContainer {
+    /* Контейнер для контактов, чтобы вынести их за пределы белого фона */
+    margin: 15px 0;
+    max-width: 1500px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Центрирование блока */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #ffffff; /* Белый фон для блока с контентом */
+    border-radius: 10px; /* Закругленные углы блока */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Отступ сверху и снизу */
+    margin-bottom: 150px;
+}
+.contactsContainer h2 {
+   
+    font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+.contacts {
+    max-width: 1500px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Центрирование блока */
+    padding: 20px; /* Внутренние отступы */
+    background: linear-gradient(135deg, #5f0346, #a44d8d); /* Белый фон для блока с контентом */
+    border-radius: 10px; /* Закругленные углы блока */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+    color: #4a90e2; /* Цвет заголовка */
+    margin-bottom: 20px;
+}
+
+.contactItem {
+    display: flex; /* Используем Flexbox для расположения иконок и значений */
+    align-items: center; /* Вертикальное центрирование иконок и текста */
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.icon {
+    width: 40px; /* Ширина иконок */
+    height: 40px; /* Высота иконок */
+    margin-right: 10px; /* Отступ справа от иконок */
+}
+
+.value {
+    color: #dfd5d5; /* Цвет значений контактной информации */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.subtitle {
+    margin-top: 20px; /* Отступ сверху для подзаголовков */
+    font-size: 1.5rem; /* Размер шрифта для подзаголовков */
+    color: #dfd5d5; /* Цвет подзаголовков */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    text-align: center; /* Центрируем подзаголовки */
+}
+
+.socials {
+    display: flex; /* Используем Flexbox для горизонтального расположения иконок */
+    justify-content: center; /* Выравнивание по центру */
+    margin: 20px 0; /* Отступы между секцией социальных иконок и другим контентом */
+}
+
+.socialLink {
+    margin: 0 10px; /* Отступы для ссылок на иконки */
+}
+
+.socialIcon {
+    width: 50px; /* Ширина иконок */
+    height: 50px; /* Высота иконок */
+}
+
+.workHours {
+    margin-top: 10px; /* Отступ сверху для часов работы */
+    font-size: 1rem; /* Размер шрифта для часов работы */
+    text-align: center; /* Центрируем текст */
+    color: #ff8400;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+    .contacts {
+        padding: 15px; /* Уменьшаем отступы на мобильных устройствах */
+    }
+
+    .title {
+        font-size: 1.8rem; /* Меньший размер шрифта для заголовка на мобильных */
+    }
+
+    .contactItem {
+        flex-direction: column; /* Вертикальное расположение для мобильных устройств */
+        align-items: flex-start; /* Выравниваем по левому краю */
+    }
+
+    .value {
+        text-align: left; /* Выравнивание значений влево для мобильных устройств */
+    }
+
+    .socialIcon {
+        width: 25px; /* Меньшая ширина иконок на мобильных */
+        height: 25px; /* Меньшая высота иконок на мобильных */
+    }
+
+    .workHours {
+        font-size: 0.9rem; /* Меньший размер шрифта для часов работы на мобильных */
+    }
+}

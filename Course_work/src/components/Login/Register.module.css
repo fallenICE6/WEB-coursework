@@ -1,0 +1,71 @@
+.form {
+  margin: 15px 0;
+  max-width: 1500px; /* Максимальная ширина блока, можно изменить по необходимости */
+  margin: 0 auto; /* Центрирование блока */
+  padding: 20px; /* Внутренние отступы */
+  background-color: #d8cccc; /* Фон блока с контентом */
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 252px;
+}
+.form1{
+  margin: 15px 0; /* Вертикальные отступы */
+  max-width: 700px; /* Максимальная ширина блока */
+  margin: 0 auto; /* Центрирование блока */
+  padding: 20px; /* Внешние отступы */
+  background: linear-gradient(135deg, #5f0346, #a44d8d); /* Цвет фона блока */
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.form h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+}
+
+.form input[type="text"], 
+.form input[type="email"], 
+.form input[type="password"] {
+  width: 75%; /* Устанавливаем ширину меньше 100% */
+  height: 40px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  display: block; /* Выравнивание поля ввода */
+  margin: 0 auto; /* Центрируем поля ввода */
+  margin-top: 10px;
+}
+
+.button {
+  width: 30%; /* Устанавливаем ширину кнопки меньше 100% */
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Центрируем кнопку */
+  margin-top: 20px;
+}
+
+.form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.form p {
+  margin-top: 30px; /* Отступ сверху для текста */
+  text-align: center; /* Центрируем текст */
+}
+
+.form a {
+  color: #007bff; /* Цвет ссылки */
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+.form a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}

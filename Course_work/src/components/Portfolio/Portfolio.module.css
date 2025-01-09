@@ -1,0 +1,74 @@
+
+  .header {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 2.3rem;
+    font-weight:  100;
+    letter-spacing: 2px;
+    text-align: center;
+    color: transparent; /* Установка цвета текста в прозрачный */
+    background-image: linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    background-clip: text; /* Для поддержки других браузеров */
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; /* Для поддержки других браузеров */
+    animation: hue 8s infinite linear; /* Убрал префикс -webkit- */
+    margin-bottom: 20px;
+  }
+  
+  @keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(-360deg);
+    }
+  }
+  .portfolio {
+    margin: 15px 0; /* Вертикальные отступы */
+  max-width: 1500px; /* Максимальная ширина блока */
+  margin: 0 auto; /* Центрирование блока */
+  padding: 20px; /* Внешние отступы */
+  background-color: #ffffff; /* Цвет фона блока */
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .portfolioList{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  }
+  .separator {
+    border: none; /* Убираем стандартные стили */
+    height: 2px; /* Высота линии */
+    background-color: #5f0346; /* Цвет линии */
+    width: 20%; /* Ширина линии */
+    margin: 10px auto; /* Центрирование и отступы */
+    margin-bottom: 20px;
+  }
+  .portfolioItem {
+    flex: 1 1 45%; /* Элементы занимают 45% ширины */
+  margin: 10px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  }
+  
+  .portfolioItem:hover {
+    transform: scale(1.05); /* увеличение при наведении */
+  }
+  
+  .portfolioItem img {
+    width: 100%; /* адаптивное изображение */
+    height: 200px; /* фиксированная высота */
+    object-fit: cover; /* сохраняет соотношение сторон и обрезает лишнее */
+}
+  
+  .portfolioItem p {
+    padding: 10px; /* внутренние отступы */
+    font-size: 16px; /* размер шрифта */
+    text-align: center;
+    color: #dfd5d5;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, #5f0346, #a44d8d); /* выравнивание текста */
+  }

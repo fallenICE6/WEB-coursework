@@ -1,0 +1,67 @@
+/* Общие стили для footer */
+.container {
+    background-color: #333; /* Цвет фона */
+    color: white;           /* Цвет текста */
+    padding: 5px;         /* Отступы */
+    font-size: 0.9rem;      /* Размер шрифта */
+    display: flex; 
+    justify-content: flex-start;         /* Используем Flexbox для расположения элементов */
+}
+
+/* Стили для логотипа */
+.logo img{
+    width: 75px;            /* Ширина логотипа */
+    height: 75px;           /* Высота логотипа */
+    border-radius: 50%;     /* Делаем логотип круглым */
+    margin-right: 20px;     /* Отступ справа от логотипа */
+    margin-left: 325px;
+}
+
+/* Стили для правой части */
+.content {
+    display: flex;          /* Используем flexbox для расположения элементов */
+    flex-direction: column;  /* Направление элементов по колонкам */
+    align-items: center;    /* Выравнивание по центру оси Y */
+}
+
+/* Стили для параграфа */
+p {
+    margin: 5px 0;          /* Отступы между параграфами и другими элементами */
+}
+
+/* Стили для ссылок */
+.link {
+    color: white;           /* Цвет ссылок */
+    text-decoration: none;  /* Убираем подчеркивание */
+    transition: color 0.3s; /* Плавный переход для цвета */
+}
+
+/* Эффект при наведении на ссылки */
+.link:hover {
+    color: #ff6347; /* Цвет при наведении */
+}
+
+/* Стили для блока с правами */
+.background_content {
+    margin-top: 10px; /* Отступ сверху для разделения блоков */
+    display: flex;     /* Используем flexbox для расположения элементов */
+    flex-wrap: wrap;   /* Позволяем переносить ссылки на следующую строку */
+}
+.background_content p {
+    margin: 5px 0; 
+}
+/* Выделенные ссылки со стилями */
+.highlightedLink {
+    display: inline-block; /* Чтобы добавить фон и отступы */
+    background-color: #444; /* Цвет фона для выделения */
+    padding: 5px 10px;     /* Отступы внутри блока */
+    border-radius: 5px;    /* Закругленные углы */
+    margin: 5px;           /* Отступы между ссылками */
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        font-size: 0.8rem; /* Уменьшаем размер шрифта для маленьких экранов */
+    }
+}

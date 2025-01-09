@@ -10,31 +10,40 @@ body {
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Задаем минимальную высоту для тела страницы */
+  min-height: 100vh;
 }
 
 /* Стили для header */
 header {
   background-color: #222;
   color: white;
-  padding: 20px 0;
+  padding: 10px 0; /* Увеличиваем отступ для лучшего отображения */
   width: 100%;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between; /* Изменено на space-between для равномерного распределения элементов */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; /* Центрирование контейнера */
 }
 
 .logo {
-  width: 250px;
-  height: 250px;
+  width: 120px; /* Уменьшаем размер логотипа, чтобы он выглядел более пропорционально */
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 20px;
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+}
+
+.logo:hover {
+  transform: scale(1.05); 
+}
+
+.logo:active {
+  transform: scale(0.95); 
 }
 
 .logo img {
@@ -45,72 +54,63 @@ header {
 
 .header-text {
   text-align: center;
-  margin-left: 5%;
+  flex-grow: 1; /* Позволяет этому элементу занимать оставшееся пространство */
+  margin: 0 20px; /* Убираем лишние отступы */
 }
 
 .header-text h1 {
-  font-size: 2.2rem;
+  font-size: 2rem; /* Уменьшаем текст для лучшего отображения */
   color: whitesmoke;
+  margin: 0; /* Убираем отступы */
 }
 
 .header-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Уменьшаем размер подзаголовка */
   color: #8913dd;
+  margin: 0; /* Убираем отступы */
 }
 
-/* Стили для полоски поиска */
-.search-bar {
-  margin-top: 20px;
+.header-icons {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* Центруем иконки по вертикали */
+  font-size: 1.9rem;
+}
+
+.dropdown-menu {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  background: linear-gradient(135deg, #5f0346, #a44d8d);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 120px; /* Задаем минимальную ширину для удобства */
+}
+
+.dropdown-menu .username {
   padding: 10px;
-  width: 100%;
+  font-weight: bold; /* Выделяем имя пользователя */
+  border-bottom: 1px solid #ccc; /* Разделяем имя пользователя от кнопок */
+  text-align: center;
 }
 
-.search-form {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.search-input {
-  width: 100%;
+.dropdown-menu button {
   padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #4a90e2; /* Цвет границы при фокусе */
-}
-
-.search-button {
-  background-color: #4a90e2;
   border: none;
-  padding: 10px;
-  margin-left: 10px;
+  background: transparent;
   cursor: pointer;
-  border-radius: 5px;
-  color: white;
-  font-size: 1rem;
+  width: 100%; /* Кнопки занимают всю ширину меню */
+  text-align: left; /* Выравнивание текста кнопок влево */
 }
 
-.search-button:hover {
-  background-color: #357ab7; /* Цвет кнопки при наведении */
+.dropdown-menu button:hover {
+  background: linear-gradient(135deg, #5f0346, #a44d8d);
 }
 
-/* Мобильные стили */
-@media (max-width: 768px) {
-  .search-form {
-    width: 80%;
-  }
-}
 
 /* Стили для боковой навигации */
 .nav {
@@ -121,29 +121,59 @@ header {
   top: 0;
   left: 0;
   height: 100%;
-  padding-top: 40px;
+  padding-top: 50px; /* Поддерживает отступ для кнопки и заголовка */
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease-in-out; /* Плавное анимированное раскрытие */
+  transition: all 0.3s ease; /* Плавное анимированное раскрытие */
 }
 
 .nav.collapsed {
-  width: 60px; /* Сужаем навигацию, когда она скрыта */
+  width: 0px; /* Сужаем навигацию, когда она скрыта */
 }
 
 .nav-content {
   width: 100%; /* Чтобы содержимое занимало всю ширину навигации */
-  opacity: 1; /* Делаем видимым содержимое, когда оно показывается */
-  visibility: visible; /* Делаем видимым */
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем содержимое по горизонтали */
 }
 
-.nav.collapsed .nav-content {
-  opacity: 0; /* Скрываем содержимое при закрытой навигации */
-  visibility: hidden; /* Прячем содержимое, но не убираем из потока */
+/* Стили для заголовка */
+.nav-content h3 {
+  margin-bottom: 20px; /* Добавляем отступ между заголовком и списком */
+  text-align: center; /* Центрируем текст заголовка */
+  font-size: 1.5rem; /* Увеличиваем размер шрифта заголовка */
+}
+.shining-text {
+  font-size: 2rem; /* Увеличиваем размер шрифта */
+  color: #fff; /* Начальный цвет текста */
+  position: relative; /* Для позиционирования псевдоэлемента */
+  overflow: hidden; /* Скрываем выходящий текст */
 }
 
+.shining-text:before {
+  content: " "; /* Используем пустой контент для создания эффекта металлического блеска */
+  position: absolute;
+  left: -100%; /* Начальное положение псевдоэлемента за пределами слева */
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite; /* Анимация псевдоэлемента */
+}
+
+@keyframes shine {
+  0% {
+      left: -100%; /* Начинаем слева */
+  }
+  50% {
+      left: 100%; /* Перемещаемся вправо */
+  }
+  100% {
+      left: 100%; /* Заканчиваем вправо */
+  }
+}
 /* Стили для кнопки стрелки */
 .nav-toggle {
   background-color: transparent;
@@ -152,66 +182,121 @@ header {
   font-size: 2rem;
   position: absolute;
   top: 20px;
-  right: -30px; /* Немного вправо от навигации */
+  right: -50px; /* Немного вправо от навигации */
   cursor: pointer;
   z-index: 10; /* Обеспечивает, что кнопка всегда будет поверх других элементов */
+  transition: transform 0.3s ease;
 }
-
-.arrow {
-  display: inline-block;
-  transition: transform 0.3s ease-in-out;
+.nav-toggle img {
+  width: 44px; /* Установите нужный размер иконки */
+  height: auto; /* Поддерживает пропорции изображения */
 }
-
 
 /* Стили для боковой навигации, когда она скрыта */
-.nav.collapsed h3,
-.nav.collapsed ul,
-.nav.collapsed .company-name {
-  display: none; /* Все скрываем, кроме кнопки стрелки */
-}
-
-/* Стили для main content */
-main {
-  margin-left: 220px; /* Отступ от навигации */
-  padding: 20px;
-  flex: 1;
-}
-
-main .collapsed {
-  margin-left: 60px; /* Когда навигация скрыта, уменьшаем отступ */
-}
-
-/* Стили для ссылок */
-.nav ul li a {
-  display: block;
-  text-align: center;
-  padding: 15px;
-  background-color: #444;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #333;
-  transition: background-color 0.3s ease-in-out;
+.nav.collapsed .nav-content {
+  display: none; /* Скрываем содержимое при закрытой навигации */
 }
 
 .nav .company-name {
   text-align: center;
-  color:#feb47b;
-  margin-top: 250%;
+  color: #feb47b;
+  margin-top: 500px; /* Уменьшаем отступ для сайта */
+  font-size: 1rem; /* Устанавливаем размер шрифта для названия компании */
+}
+
+/* Стили для списка навигации */
+.nav ul {
+  width: 100%; /* Ширина списка занимает всю ширину навигации */
+  padding: 0; /* Убираем внутренние отступы у списка */
+  list-style-type: none; /* Убираем маркеры списка */
+}
+
+.nav ul li {
+  width: 100%; /* Каждая ссылка занимает всю ширину */
+}
+
+.nav ul li a {
+  display: flex; /* Используем flex для выравнивания иконки и текста */
+  align-items: center; /* Центрируем элементы по вертикали */
+  padding: 15px; /* Отступы */
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem; /* Размер шрифта ссылок */
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease;
 }
 
 .nav ul li a:hover {
-  background-color: #888;
+  background-color: #888; /* Цвет фона при наведении */
+}
+
+/* Стили для иконок в навигации */
+.nav ul li .nav-icon {
+  width: 24px; /* Установите нужный размер иконок */
+  height: auto; /* Поддерживает пропорции изображения */
+  margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+/* Стили для main content */
+main {
+  margin-left: 115px; /* Отступ от навигации */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+main.collapsed {
+  margin-left: 60px; /* Когда навигация скрыта, уменьшаем отступ */
 }
   .content-main {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff; /* Белый фон для блока с контентом */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    margin-bottom: 20px;
+    
   }
-  
+  .content-main-1 {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Белый фон для блока с контентом */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
+    
+  }
+  .content-main-1 h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.typing {
+    font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт для эффекта печати */
+    border-right: 2px solid; /* Курсор как граница справа */
+    white-space: nowrap; /* Не переносить текст */
+    overflow: hidden; /* Скрыть текст, пока он "печатается" */
+    display: inline-block; /* Обеспечиваем возможность менять ширину элемента */
+    animation: blink-caret 0.75s step-end infinite; /* Только анимация мигания курсора */
+}
+
+/* Анимация мигания курсора */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent; /* Курсор прозрачный в начале и в конце */
+    }
+    50% {
+        border-color: black; /* Половина времени - черный курсор */
+    }
+}
+
+/* Скрытие курсора после завершения печати */
+.typing.finished {
+    border-right: none; /* Убираем границу курсора */
+}
   h2 {
     font-size: 2rem;
     font-weight: 600;
@@ -233,6 +318,10 @@ main .collapsed {
     padding: 10px 0;
     font-size: 1.7rem;
     text-align: center;
+  }
+  .intro:hover{
+    transform: translateY(-2px); /* Подъем элемента при наведении */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
   
   .text-main h3 {
@@ -262,19 +351,40 @@ section p {
   font-size: 1.2rem;
   color: #555;
 }
-
-/* Стили для footer */
-footer {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  text-align: center;
+.contents {
+  display: flex; /* Используем Flexbox */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  gap: 20px; /* Пробел между элементами */
 }
 
-footer p {
-  margin: 0;
+.content-item {
+  flex: 1 1 calc(50% - 20px); /* Каждый элемент занимает 50% ширины, вычитая пробел */
+  background-color: #f9f9f9; /* Фоновый цвет для элемента */
+  border-radius: 10px; /* Закругленные углы */
+  padding: 20px; /* Внутренние отступы */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для элементов */
+  display: flex; /* Используем Flexbox для внутреннего выравнивания */
+  align-items: center; /* Вертикальное выравнивание по центру */
 }
+.content-item:hover{
+  transform: translateY(-2px); /* Подъем элемента при наведении */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.content-item img {
+  max-width: 100px; /* Максимальная ширина изображения */
+  margin-right: 15px; /* Отступ справа от изображения */
+  border-radius: 5px; /* Закругленные углы для изображения */
+}
+
+.content-item h3 {
+  margin: 0; /* Убираем отступы для заголовка */
+  margin-right: 15px;
+}
+
+.content-item p {
+  margin: 0; /* Убираем отступы для текста */
+}
+
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {

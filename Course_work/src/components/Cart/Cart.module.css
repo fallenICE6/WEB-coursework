@@ -1,0 +1,202 @@
+/* cart.module.css */
+
+.cartContainer {
+    background-color: #f8f9fa; /* Светлый фон */
+    color: #212529; /* Темный текст */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 389px;
+}
+.paymentButtonContainer {
+    display: flex;
+    justify-content: center; /* Центрируем кнопку */
+    margin-top: 20px; /* Отступ сверху для отделения от других элементов */
+    
+}
+.cartContainer button[id="btn-1"] {
+    background-color: #880eb8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.cartContainer button[id="btn-1"]:hover{
+    background-color: #4b0658;
+}
+.cartContainerInside {
+    max-width: 1500px; /* Максимальная ширина блока */
+    margin: 0 auto; /* Центрирование блока */
+    padding: 12px; /* Внешние отступы */
+    background: linear-gradient(135deg, #5f0346, #a44d8d); /* Деловой градиент */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.cartContainer p{
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Легкая разделяющая линия */
+    color:#f8f9fa; /* Белый фон для элементов списка */
+    border-radius: 5px; /* Закругленные углы у элементов списка */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    background: linear-gradient(135deg, #5f0346, #a44d8d);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+}
+/* Заголовок корзины */
+.cartContainer h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; /* Белый текст */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Увеличенная тень для улучшения видимости */
+    margin-bottom: 40px;
+}
+
+.cartContainer h2 {
+    text-align: left; /* Выравнивание суммы влево */
+    margin-top: 20px;
+    color: #333; /* Темный цвет подзаголовков */
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);/* Тень для подзаголовков */
+}
+
+/* Стили для списка и элементов списка */
+.cartContainer ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+.cartContainer li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Легкая разделяющая линия */
+    display: flex;
+    justify-content: space-between; /* Разделяем элементы и кнопку */
+    align-items: center; /* Выравнивание по центру */
+    background-color: #ffffff; /* Белый фон для элементов списка */
+    border-radius: 5px; /* Закругленные углы у элементов списка */
+    margin-bottom: 10px; /* Отступ между элементами */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход для анимации */
+}
+
+/* Эффект наведения на элементы списка */
+.cartContainer li:hover {
+    transform: translateY(-2px); /* Подъем элемента при наведении */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+}
+
+/* Кнопка удаления товара */
+.cartContainer button {
+    background-color: #e74c3c; /* Красный цвет для кнопки удаления */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.cartContainer button:hover {
+    background-color: #c0392b; /* Более темный оттенок при наведении */
+}
+
+/* Стили для итоговой суммы */
+.cartContainer h3 {
+    text-align: right; /* Выравнивание суммы вправо */
+    margin-top: 40px;
+    color: #681068; /* Темно-синий цвет итоговой суммы */
+    font-size: 1.2rem; /* Темно-синий цвет итоговой суммы */
+}
+
+/* Кнопка оплаты */
+.cartContainer button[type="button"] {
+    background-color: #3498db; /* Голубой цвет для кнопки оплаты */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%; /* Занимает полную ширину */
+    font-size: 16px; /* Увеличенный текст */
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.cartContainer button[type="button"]:hover {
+    background-color: #2980b9; /* Более темный голубой при наведении */
+}
+
+/* Модальное окно */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+/* Содержимое модального окна */
+.modalContent {
+    background-color: #6a0dad; /* Темно-фиолетовый фон */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Ширина модального окна */
+    position: relative;
+}
+
+/* Кнопка закрытия модального окна */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Стили для формы в модальном окне */
+.modalContent form {
+    display: flex;
+    flex-direction: column; /* Вертикальная ориентация элементов */
+}
+
+/* Стили для полей ввода */
+.modalContent input {
+    margin-bottom: 10px; /* Отступ между полями */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Стили для блока с карточкой */
+.card {
+    background-color: #4e2a91; /* Цвет фона для карточки */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Отступ снизу */
+    display: flex; /* Включаем flex-контейнер */
+    flex-direction: column; /* Направление колонка */
+}
+
+.card span {
+    margin-bottom: 5px; /* Отступ между элементами */
+}
+
+/* Стили для кнопки подтверждения оплаты */
+.modalContent button[type="submit"] {
+    background-color: #ffcc00; /* Желтый цвет для кнопки подтверждения */
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
